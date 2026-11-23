@@ -23,6 +23,10 @@
 
 Welcome to the **Metana AI Engineering Workshop**! In this hands-on workshop, you will build an end-to-end, AI-powered expense tracking system by connecting a modern **React frontend** to **Supabase**, **n8n**, and **Google Gemini AI**.
 
+<p align="center">
+  <img src="./public/app-preview.jpg" alt="AI Expense Tracker Dashboard Preview" width="100%" style="border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 16px;" />
+</p>
+
 ---
 
 ## Architecture Overview
