@@ -416,7 +416,8 @@ VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY`}
             </div>
           </div>
 
-          <div className="table-responsive">
+          {/* Desktop Table View (min-width: 768px) */}
+          <div className="table-responsive desktop-view">
             <table className="expenses-table">
               <thead>
                 <tr>
@@ -558,6 +559,135 @@ VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY`}
                 )}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile Card List View (< 768px) */}
+          <div className="mobile-expense-list mobile-view">
+            {filteredExpenses.map((expense) => {
+              const categoryStyle =
+                CATEGORY_COLORS[expense.category] || CATEGORY_COLORS["Other"];
+
+              return (
+                <div
+                  key={expense.id}
+                  className={`mobile-expense-card card-${expense.status}`}
+                >
+                  <div className="card-top-row">
+                    <div className="card-merchant">
+                      {expense.merchant || (
+                        <span className="text-unprocessed">
+                          {expense.status === "pending"
+                            ? "Extracting merchant..."
+                            : "Unspecified Merchant"}
+                        </span>
+                      )}
+                    </div>
+                    <div className="card-amount">
+                      {expense.amount != null ? (
+                        <span className="amount-highlight">
+                          {expense.currency === "USD" || !expense.currency
+                            ? "$"
+                            : `${expense.currency} `}
+                          {Number(expense.amount).toLocaleString("en-US", {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}
+                        </span>
+                      ) : (
+                        <span className="text-pending-amount">Pending AI</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {expense.raw_input && (
+                    <div className="card-raw-snippet">
+                      "{expense.raw_input}"
+                    </div>
+                  )}
+
+                  {expense.description && (
+                    <div className="card-desc-snippet">
+                      {expense.description}
+                    </div>
+                  )}
+
+                  <div className="card-meta-row">
+                    <div className="card-tags-group">
+                      {expense.category && (
+                        <span
+                          className="category-pill"
+                          style={{
+                            backgroundColor: categoryStyle.bg,
+                            color: categoryStyle.text,
+                          }}
+                        >
+                          {expense.category}
+                        </span>
+                      )}
+                      <span className={`source-tag tag-${expense.source || "manual"}`}>
+                        {expense.source === "email" ? "Email" : "Manual"}
+                      </span>
+                      <span className="card-date">
+                        {expense.expense_date
+                          ? expense.expense_date
+                          : expense.created_at
+                          ? new Date(expense.created_at).toLocaleDateString()
+                          : "—"}
+                      </span>
+                    </div>
+
+                    <div className="card-status-wrapper">
+                      <span className={`status-badge badge-${expense.status}`}>
+                        {expense.status === "completed" && (
+                          <span className="badge-icon">✓</span>
+                        )}
+                        {expense.status === "pending" && (
+                          <span className="badge-pulse"></span>
+                        )}
+                        {expense.status === "needs_review" && (
+                          <span className="badge-icon">!</span>
+                        )}
+                        {expense.status === "pending"
+                          ? "AI Processing"
+                          : expense.status === "needs_review"
+                          ? "Needs Review"
+                          : "Completed"}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            {filteredExpenses.length === 0 && (
+              <div className="empty-state">
+                <div className="empty-box">
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#94a3b8"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{ marginBottom: "6px" }}
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                  <h3>No expenses found</h3>
+                  <p>
+                    {expenses.length === 0
+                      ? "Add your first expense above or send a test email to get started!"
+                      : "No expenses match your current search and filter criteria."}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </main>
