@@ -166,7 +166,8 @@ export default function App() {
               }`}
             >
               <span className="status-dot"></span>
-              {isSupabaseConfigured ? "Supabase Connected" : "Supabase Missing"}
+              <span className="pill-prefix">Supabase </span>
+              <span>{isSupabaseConfigured ? "Connected" : "Missing"}</span>
             </div>
 
             <button
@@ -239,7 +240,7 @@ VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY`}
           <div className="stat-card">
             <span className="stat-label">Total Recorded Amount</span>
             <div className="stat-value">
-              <span className="currency-tag">$</span>{" "}
+              <span className="currency-tag">$</span>
               {totalAmount.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
@@ -286,7 +287,7 @@ VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY`}
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="e.g. Coffee at Starbucks, $6.50 or Uber ride to airport, $35"
+                  placeholder="e.g. Coffee at Starbucks, $6.50"
                   disabled={loading}
                   className="expense-input"
                 />

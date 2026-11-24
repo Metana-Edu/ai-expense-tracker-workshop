@@ -78,6 +78,10 @@
   white-space: nowrap;
 }
 
+.pill-prefix {
+  display: none; /* Hidden on mobile to keep navbar spacious, shown on tablet+ */
+}
+
 .connection-pill.connected {
   background: #f0fdf4;
   color: #166534;
@@ -835,6 +839,10 @@
     display: inline-block; /* Show workshop pill on tablet+ */
     font-size: 11px;
     padding: 3px 8px;
+  }
+
+  .pill-prefix {
+    display: inline;
   }
 
   .connection-pill {
