@@ -123,8 +123,6 @@ VITE_SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
 VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY
 ```
 
-*(You will fill in these values in Step 1 below).*
-
 ### 3. Start the Development Server
 
 ```bash
