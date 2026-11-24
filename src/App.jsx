@@ -156,7 +156,7 @@ export default function App() {
               alt="Metana"
               className="brand-logo"
             />
-            <span className="badge-workshop">AI Workshop</span>
+            <span className="badge-workshop">How To Build Your Own AI Agent</span>
           </div>
 
           <div className="nav-actions">
@@ -226,11 +226,12 @@ VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY`}
         {/* Hero Section */}
         <header className="page-header">
           <div className="header-text">
-            <span className="sub-heading">AUTOMATED EXPENSE INTELLIGENCE</span>
+            <span className="sub-heading">METANA • HOW TO BUILD YOUR OWN AI AGENT</span>
             <h1>AI Expense Tracker</h1>
             <p>
-              Type expenses in natural language or ingest emails. Supabase Webhooks
-              trigger n8n to extract structured financial data with Google Gemini AI.
+              Type expenses in natural language or ingest emails. The Metana AI agent
+              pipeline uses Supabase Webhooks, n8n, and Google Gemini to extract structured
+              financial data automatically.
             </p>
           </div>
         </header>
@@ -695,9 +696,22 @@ VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_KEY`}
 
       {/* Footer */}
       <footer className="page-footer">
-        <p>
-          Metana AI Engineering Workshop • Powered by React, Supabase, n8n & Google Gemini
-        </p>
+        <div className="footer-content">
+          <p className="footer-title">
+            Metana • <strong>How To Build Your Own AI Agent</strong> Workshop
+          </p>
+          <p className="footer-sub">
+            Built with React, Supabase, n8n & Google Gemini •{" "}
+            <a
+              href="https://metana.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              metana.io
+            </a>
+          </p>
+        </div>
       </footer>
     </div>
   );

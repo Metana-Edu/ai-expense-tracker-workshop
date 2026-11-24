@@ -816,11 +816,37 @@
 .page-footer {
   border-top: 1px solid #e2e8f0;
   background: #ffffff;
-  padding: 16px 14px;
+  padding: 20px 14px;
   text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-title {
+  margin: 0;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.footer-sub {
+  margin: 0;
   font-size: 12px;
   color: #64748b;
-  margin-top: auto;
+}
+
+.footer-link {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
 }
 
 /* ==========================================================================

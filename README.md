@@ -5,14 +5,14 @@
   </a>
 </p>
 
-<h1 align="center">AI Expense Tracker - Workshop Setup Guide</h1>
+<h1 align="center">How To Build Your Own AI Agent</h1>
 
 <p align="center">
-  <strong>Build an AI-Powered Expense Pipeline with React, Supabase, n8n, and Google Gemini</strong>
+  <strong>Metana Workshop Setup Guide: Autonomous AI Expense Tracker</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Metana-AI_Engineering_Workshop-4f46e5?style=flat-square" alt="Metana Workshop" />
+  <img src="https://img.shields.io/badge/Metana-How_To_Build_Your_Own_AI_Agent-4f46e5?style=flat-square" alt="Metana Workshop" />
   <img src="https://img.shields.io/badge/React-19-blue?style=flat-square" alt="React 19" />
   <img src="https://img.shields.io/badge/Supabase-Database-3ECF8E?style=flat-square" alt="Supabase" />
   <img src="https://img.shields.io/badge/n8n-Automation-EA4B71?style=flat-square" alt="n8n" />
@@ -21,7 +21,7 @@
 
 ---
 
-Welcome to the **Metana AI Engineering Workshop**! In this hands-on workshop, you will build an end-to-end, AI-powered expense tracking system by connecting a modern **React frontend** to **Supabase**, **n8n**, and **Google Gemini AI**.
+Welcome to the Metana workshop: **How To Build Your Own AI Agent**! In this hands-on workshop, you will build an autonomous, AI-powered expense tracking agent by connecting a modern **React frontend** to **Supabase**, **n8n**, and **Google Gemini AI**.
 
 <p align="center">
   <img src="./public/app-preview.jpg" alt="AI Expense Tracker Dashboard Preview" width="100%" style="border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 16px;" />
